@@ -1,6 +1,6 @@
 package com.example.demo.servis;
 
-import com.example.demo.model.entity.Role;
+
 import com.example.demo.model.entity.User;
 import com.example.demo.repo.UserRepo;
 
@@ -19,7 +19,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import javax.transaction.Transactional;
 import java.util.*;
-
+import java.util.stream.Stream;
 
 
 @Service
@@ -79,15 +79,13 @@ public class UserService implements UserDetailsService{
         if (Objects.isNull(u)) {
             throw new UsernameNotFoundException(String.format("User %s is not found", login));
         }
+
         return new org.springframework.security.core.userdetails.User(u.getLogin(), u.getPassword(), true, true, true, true, new HashSet<>());
+
+
+//        return new org.springframework.security.core.userdetails.User(u.getLogin(), u.getPassword(), grantedAuthorities);
     }
 
-    public void registrationAdmin(String email,String name, String login,String password){
-        User newUser = new User(email,name,login,password);
-        newUser.setRole(Role.ADMIN);
-        newUser.setStatusActive(true);
-        userData.save(newUser);
-    }
 
     @Transactional
     public void registration(String email,String name, String login,String password) throws Exception {

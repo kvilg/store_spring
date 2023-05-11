@@ -44,5 +44,13 @@ public class Keyboard extends Product{
         this.gaming = gaming;
     }
 
-
+    @Override
+    public String toString() {
+        return this.name + "\n" +
+                this.img + "\n" +
+                this.price + "\n" +
+                this.keyCount + "\n" +
+                this.illumination + "\n" +
+                this.gaming;
+    }
 }

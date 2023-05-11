@@ -1,7 +1,8 @@
 package com.example.demo.model;
 
-
 import com.example.demo.model.entity.User;
+
+import java.util.LinkedList;
 
 public class UserOut {
 
@@ -15,19 +16,12 @@ public class UserOut {
 
 
 
-
-
-
-    public UserOut(User user) throws Exception {
+    public UserOut(User user) {
         this.id = user.getId();
         this.name = user.getName();
         this.login = user.getLogin();
         this.email = user.getEmail();
     }
-
-
-
-
 
 
     public Long getId() {
@@ -63,5 +57,5 @@ public class UserOut {
     public void setEmail(String email) {
         this.email = email;
     }
-
+    
 }

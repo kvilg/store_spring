@@ -7,7 +7,6 @@ import javax.persistence.Id;
 
 @Entity
 public class MouseDpi {
-
     @Id
     private Integer dpi;
 }

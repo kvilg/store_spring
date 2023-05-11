@@ -1,7 +1,13 @@
 package com.example.demo.model.entity;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class User implements Serializable {
@@ -16,7 +22,7 @@ public class User implements Serializable {
     private String password;
     private Boolean statusActive;
     private String codeActive;
-    private Role role;
+
 
 
 
@@ -32,7 +38,6 @@ public class User implements Serializable {
         this.login = login;
         this.password = password;
         this.statusActive = false;
-        this.role = Role.USER;
     }
 
 
@@ -60,6 +65,7 @@ public class User implements Serializable {
     public void setLogin(String login) {
         this.login = login;
     }
+
 
     public String getPassword() {
         return password;
@@ -94,11 +100,5 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public Role getRole() {
-        return role;
-    }
 
-    public void setRole(Role role) {
-        this.role = role;
-    }
 }

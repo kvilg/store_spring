@@ -10,7 +10,7 @@ public abstract class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    Long id;
 
     String name;
 
@@ -58,7 +58,6 @@ public abstract class Product {
     public void setImg(Blob img) {
         this.img = img;
     }
-
 
 
 }

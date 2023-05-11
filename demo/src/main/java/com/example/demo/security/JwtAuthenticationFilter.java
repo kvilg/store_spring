@@ -40,7 +40,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws IOException, ServletException {
-
+        logger.warn("1____________________________________________________________________");
         String header = req.getHeader(HEADER_STRING);
         String cookie = req.getHeader(HttpHeaders.COOKIE);
         logger.warn(cookie);
@@ -99,5 +99,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             }
         }
         chain.doFilter(req, res);
+        logger.warn("2____________________________________________________________________");
     }
 }

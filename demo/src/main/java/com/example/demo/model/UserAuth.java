@@ -6,7 +6,6 @@ public class UserAuth {
     private String name;
     private String login;
     private String password;
-    private String text;
     private String code;
 
 
@@ -64,10 +63,6 @@ public class UserAuth {
         this.password = password;
     }
 
-
-    public void setText(String text) {
-        this.text = text;
-    }
 
     public String getCode() {
         return code;
